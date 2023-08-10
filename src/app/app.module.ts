@@ -9,7 +9,6 @@ import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 import { CampaignDetailsComponent } from './pages/campaign-details/campaign-details.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
-import { FilledButtonComponent } from './components/filled-button/filled-button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { FilledButtonComponent } from './components/filled-button/filled-button.
     BlogPostComponent,
     CampaignsComponent,
     CampaignDetailsComponent,
-    FilledButtonComponent,
   ],
   imports: [
     BrowserModule,
