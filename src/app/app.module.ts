@@ -9,6 +9,7 @@ import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 import { CampaignDetailsComponent } from './pages/campaign-details/campaign-details.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { SolidButtonComponent } from './components/solid-button/solid-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     BlogPostComponent,
     CampaignsComponent,
     CampaignDetailsComponent,
+    SolidButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,17 @@
 @import "/src/app/styles/colors.less";
+@import "/src/app/styles/navbar.less";
+@import "/src/app/styles/styles.less";
 
-.resizable-element {
-    padding: 1rem;
+body {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: @black;
+    background: @homeBackgroundGradient;
+}
+
+img {
+    border-radius: 12px;
 }
 
 .content {
@@ -9,6 +19,87 @@
     display: grid;
     max-width: 100vw;
     gap: 1rem;
+    padding: 16px;
+
+    .home-page-dragon {            
+        img {
+            max-width: 90vw;
+            width: 40vw;
+        }
+    }
+
+    .resizable-element {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        h1 {
+            .header();
+            margin-bottom: 0px;
+        }
+
+        p {
+            .text();
+            margin-bottom: 0px;
+        }
+
+        .create-campaign-img {
+            width: 100%;
+            max-height: 50%;
+            aspect-ratio: 1.15;
+        }
+
+        .multi-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .sub-directory {
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: row;
+                gap: 16px;
+    
+                .run-campaign-img {
+                    width: 50%;
+                    max-height: 100%;
+                    aspect-ratio: 0.85;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+    
+    .element {
+        display: flex;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        align-items: center;
+        flex-direction: column;
+        background: @homeSectionGradient;
+        border-radius: 12px;
+        gap: 16px;
+
+        h1 {
+            .header();
+        }
+
+        p {
+            .text();
+        }
+
+        h2 {
+            .header();
+            margin-bottom: 0px;
+        }
+    }
 }
 
 @media (min-width: 600px) {
@@ -16,155 +107,10 @@
 }
 
 @media (max-width: 599px) {
-    #home-page-dragon {
-        display: none;
-    }
-}
-
-body {
-    width: 100%;
-    overscroll-behavior-y: none;
-    // background-color: @black;
-}
-
-html, body {
-    overscroll-behavior-y: none;
-}
-
-.element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.sub-directory {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-h1 {
-    text-align: center;
-}
-
-#create-campaign-img {
-    width: 100%;
-    height: 50%;
-    aspect-ratio: 1.15;
-}
-
-#run-campaign-img {
-    width: 50%;
-    height: 100%;
-}
-
-#home-page-dragon {
-    max-width: 90vw;
-    width: 40vw;
-}
-
-// Navigation Bar
-a img {
-    width: 20px;
-    height: 20px;
-}
-
-#logo {
-    width: 40px;
-    height: 40px;
-    
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    align-items: start;
-    overflow: hidden;
-}
-
-a {
-    margin: 8px;
-    padding-inline-start: 16px; 
-    padding-inline-end: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    text-align: center;  
-    height: 100%;  
-}
-
-#home-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#home-navigation span {
-    padding-inline-start: 8px;
-}
-
-ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    margin-bottom: 0px;
-}
-
-.topnav {
-    overflow: hidden;
-    height: 100%;
-}
-
-.topnav a {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.topnav ul .icon {
-    display: none;
-}
-
-@media screen and (max-width: 700px) {
-.topnav ul a:not(:first-child) {
-    display: none;
-}
-
-.topnav ul a.icon {
-    float: right;
-    display: block;
-}
-}
-
-@media screen and (max-width: 700px) {
-    .topnav ul li {
-        display: none;
-    }
-
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive ul .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive ul {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .topnav.responsive ul li {
-        display: block;
-    }
-
-    .topnav.responsive ul li #homepage-button {
-        visibility: hidden;
+    .content {
+        .home-page-dragon {
+            display: none;
+            padding: 0px;
+        }
     }
 }

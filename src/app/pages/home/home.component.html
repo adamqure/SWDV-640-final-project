@@ -2,14 +2,14 @@
     <!-- Nav Bar -->
     <header>
         <nav aria-label="Main">
-            <a id="home-navigation" href="#">
-                <img id="logo" src="assets/logo.svg" alt="Homepage">
+            <a class="home-navigation" href="#">
+                <img class="logo" src="assets/logo.svg" alt="Homepage">
                 <span id>Dungeon Forge</span>
             </a>
             <div class="topnav" id="main-navigation-content">
                 <ul>
                     <li>
-                        <a id="homepage-button" href="/" aria-current="page">Home</a>
+                        <a class="homepage-button current-page" href="/" aria-current="page">Home</a>
                     </li>
                     <li>
                         <a href="/blogs">GM Tips</a>
@@ -21,7 +21,7 @@
                         <a href="/campaigns">Campaigns</a>
                     </li>
                     <a (click)="toggleMenuButton()" id="navigation-icon" class="icon" aria-label="Mobile Navigation Button" aria-expanded="false">
-                        <img src="assets/more.png">
+                        <img src="assets/more.svg">
                     </a>
                 </ul>
             </div>
@@ -30,44 +30,65 @@
 
     <div class="content" role="document">
         <!-- Intro Text -->
-        <div class="resizable-element element">
-            <h1>D&D Campaign Creator</h1>
-            <p>The adventure starts here.</p>
+        <div class="resizable-element">
+            <h1>Welcome to Dungeon Forge</h1>
+            <p>The adventure starts here</p>
+            <a href="/campaigns">
+                <app-solid-button [buttonTitle]='"View Campaigns"'></app-solid-button>
+            </a>
         </div>
 
         <!-- Home Image -->
-        <div class="resizable-element element">
-            <img id="home-page-dragon" src="assets/home-page-dragon.jpg" alt="Black dragon breathing fire">
+        <div class="resizable-element home-page-dragon">
+            <img src="assets/home-page-dragon.png" alt="Black dragon breathing fire">
         </div>
 
         <!-- Generate Campaign -->
         <div class="resizable-element element">
-            <img id="create-campaign-img" src="assets/create-campaign.jpg" alt="Tiefling warlock casting a spell while in combat">
+            <img class="create-campaign-img" src="assets/create-campaign.jpg" alt="Tiefling warlock casting a spell while in combat">
             <h2>Create a Campaign</h2>
             <p>The adventure begins with a spark of inspiration.</p>
+            <a href="/create-campaign">
+                <app-solid-button [buttonTitle]='"Create Campaign"'></app-solid-button>
+            </a>
         </div>
 
         <!-- Subcategories -->
         <div class="resizable-element">
-            <!-- Run a Campaign -->
-            <div class="sub-directory">
-                <div>
-                    <h2>Run a Campaign</h2>
-                    <p>Unleash the chaos and let the adventure unfold.</p>
+            <div class="multi-section">
+                <!-- Run a Campaign -->
+                <div class="sub-directory element">
+                    <div>
+                        <h2>Run a Campaign</h2>
+                        <p>Unleash the chaos and let the adventure unfold.</p>
+                        <a href="/campaigns">
+                            <app-solid-button [buttonTitle]='"View Campaigns"'></app-solid-button>
+                        </a>
+                    </div>
+                    <img class="run-campaign-img" src="assets/run-campaign.jpg" alt="Adventurers facing off against a white dragon">
                 </div>
-                <img id="run-campaign-img" src="assets/run-campaign.jpg" alt="Adventurers facing off against a white dragon">
-            </div>
 
-            <!-- GM Tips -->
-            <div class="sub-directory">
-                <!-- How to Run a Campaign-->
-                <div class="element">
-                    <p>How to run a campaign</p>
-                </div>
-                
-                <!-- GM Tips Link -->
-                <div class="element">
-                    <p>GM Tips</p>
+                <!-- GM Tips -->
+                <div class="sub-directory dm-tip">
+                    <!-- How to Run a Campaign-->
+                    <div class="element">
+                        <h2>
+                            Learn How to Run a Campaign
+                        </h2>
+                        <a href="/blogs">
+                            <app-solid-button [buttonTitle]='"View Article"'></app-solid-button>
+                        </a>
+                    </div>
+                    
+                    <!-- GM Tips Link -->
+                    <div class="element dm-tip">
+                        <h2>
+                            Become a Better Game Master
+                        </h2>
+                        <a href="/blogs">
+                            <app-solid-button [buttonTitle]='"Explore"'></app-solid-button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
