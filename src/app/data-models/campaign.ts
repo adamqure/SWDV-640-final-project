@@ -10,6 +10,9 @@ export class Campaign {
     adventureHook: CampaignEvent
     adventures: Adventure[]
     html: string
+    numPlayers: number
+    startLevel: number
+    endLevel: number
 
     constructor(
         _id: any | undefined = undefined, 
@@ -19,6 +22,9 @@ export class Campaign {
         adventureHook: CampaignEvent,
         adventures: Adventure[], 
         html: string,
+        numPlayers: number,
+        startLevel: number,
+        endLevel: number
     ) {
         this._id = _id
         this.name = name
@@ -27,5 +33,8 @@ export class Campaign {
         this.adventureHook = adventureHook
         this.adventures = adventures
         this.html = html
+        this.numPlayers = numPlayers
+        this.startLevel = startLevel
+        this.endLevel = endLevel
     }
 }

@@ -10,6 +10,9 @@ import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 import { CampaignDetailsComponent } from './pages/campaign-details/campaign-details.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { SolidButtonComponent } from './components/solid-button/solid-button.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { SolidButtonComponent } from './components/solid-button/solid-button.com
     BrowserModule,
     AppRoutingModule,
     NgbCollapseModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
