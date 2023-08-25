@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Campaign } from '../data-models/campaign';
 import { collection, addDoc, Firestore, deleteDoc, doc, setDoc, getDocs, getDoc } from '@angular/fire/firestore';
+import { BlogPost } from '../data-models/blog-post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
   private static campaignCollection = "campaigns"
+  private static blogPostCollection = "blog-posts"
 
   constructor(private readonly firestore: Firestore) { }
 
@@ -55,4 +57,37 @@ export class LocalStorageService {
     })
   }
 
+  async getBlogPostList(): Promise<BlogPost[]> {
+    const blogPostCollectionRef = collection(this.firestore, LocalStorageService.blogPostCollection)
+    return getDocs(blogPostCollectionRef).then((collections) => {
+      var result: BlogPost[] = []
+      collections.forEach((document) => {
+        let json = document.data()
+        let blogPost = new BlogPost(
+          document.id,
+          json["title"],
+          json["html"]
+        )
+        result.push(blogPost)
+      })
+      return result
+    })
+  }
+
+  async getBlogPost(forID: any): Promise<BlogPost> {
+    const blogPostRef = doc(this.firestore, LocalStorageService.blogPostCollection + "/" + forID)
+    return getDoc(blogPostRef).then((document) => {
+      let json = document.data()
+      if (json) {
+        let blogPost = new BlogPost(
+          document.id,
+          json["title"],
+          json["html"]
+        )
+        return blogPost
+      }
+      
+      throw Error("No blog post available for ID: " + forID)
+    })
+  }
 }

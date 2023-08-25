@@ -1,3 +1,35 @@
-<div>
-    <div class="campaign-detail"></div>
-</div>
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav aria-label="Main">
+            <a class="home-navigation" href="#">
+                <img class="logo" src="assets/logo.svg" alt="Homepage">
+                <span id>Dungeon Forge</span>
+            </a>
+            <div class="topnav" id="main-navigation-content">
+                <ul>
+                    <li>
+                        <a class="homepage-button" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/blogs">GM Tips</a>
+                    </li>
+                    <li>
+                        <a href="/create-campaign">Create Campaign</a>
+                    </li>
+                    <li>
+                        <a href="/campaigns">Campaigns</a>
+                    </li>
+                    <a (click)="toggleMenuButton()" id="navigation-icon" class="icon" aria-label="Mobile Navigation Button" aria-expanded="false">
+                        <img src="assets/more.svg">
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <div class="campaign-detail"></div>
+    </div>
+</body>
+

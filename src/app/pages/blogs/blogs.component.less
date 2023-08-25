@@ -1,0 +1,36 @@
+@import "/src/app/styles/navbar.less";
+@import "/src/app/styles/styles.less";
+@import "/src/app/styles/colors.less";
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: @black;
+    background: @homeBackgroundGradient;
+
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+        .blog-list {
+            max-width: 60vw;
+            background-color: bisque;
+            padding: 8px;
+        
+            .campaign-image {
+                width: 100%;
+            }
+        
+            p {
+                .text();
+            }
+            
+            h1, h2, h3 {
+                .header();
+            }
+        }
+    }
+}

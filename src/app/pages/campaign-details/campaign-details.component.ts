@@ -25,7 +25,7 @@ export class CampaignDetailsComponent {
         let componentList = document.getElementsByClassName("campaign-detail");
         let component = componentList.item(0);
         let structure = `
-        <img class="campaign-image" src="{{ image }}" style="max-width: 100vw;">
+        <img class="campaign-image" src="{{ image }}" style="max-width: 58vw;">
         <h1>{{ name }}</h1>
         <p>{{ numPlayers }} Players -- Level {{ startLevel }} - {{ endLevel }}</p>
         <!-- Overview -->
@@ -50,6 +50,9 @@ export class CampaignDetailsComponent {
         if (component) {
           component.innerHTML = template;
         }
+      })
+      .catch((error) => {
+        this.router.navigate(["campaigns"]);
       })
    });
   }
